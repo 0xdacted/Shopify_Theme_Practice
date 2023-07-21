@@ -3,8 +3,11 @@
 {% for product in collections['automated-collection'].products %}
   <div>
     {{ product.featured_image | image_url: width: 100 | image_tag }}
-    <h3>{{ product.title }} </h3>
-    <p> {{product.price | money }} </p>
+    <a href=" {{ product_url }}">
+      <h3>{{ product.title }} </h3>
+      <p> {{product.price | money }} </p>
+    </a>
+    
   </div>
   {{ product.title | link_to: product.url }}
 {% endfor %}
